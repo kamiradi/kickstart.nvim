@@ -207,6 +207,13 @@ vim.keymap.set('n', '<leader>l', '<C-w>l')
 vim.keymap.set('n', '<leader>h', '<C-w>h')
 vim.keymap.set('n', '<leader>j', '<C-w>j')
 vim.keymap.set('n', '<leader>k', '<C-w>k')
+
+vim.keymap.set('i', '{', '{}<Esc>ha', { silent = true })
+vim.keymap.set('i', '(', '()<Esc>ha', { silent = true })
+vim.keymap.set('i', '[', '[]<Esc>ha', { silent = true })
+vim.keymap.set('i', '<', '<><Esc>ha', { silent = true })
+vim.keymap.set('i', '"', '""<Esc>ha', { silent = true })
+vim.keymap.set('i', "'", "''<Esc>ha", { silent = true })
 --
 --  See `:help wincmd` for a list of all window commands
 -- vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
@@ -390,7 +397,6 @@ require('lazy').setup({
         pickers = {
           find_files = {
             hidden = true,
-            no_ignore = true,
           },
         },
         extensions = {
@@ -799,7 +805,7 @@ require('lazy').setup({
   },
 
   -- Highlight todo, notes, etc in comments
-  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
+  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = true } },
 
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
@@ -842,7 +848,7 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc' },
+      ensure_installed = { 'bash', 'c', 'html', 'lua', 'luadoc', 'markdown_inline', 'vim', 'vimdoc' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
