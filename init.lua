@@ -90,7 +90,6 @@ P.S. You can delete this when you're done too. It's your config now! :)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-
 -- Set to true if you have a Nerd Font installed
 vim.g.have_nerd_font = true
 
@@ -105,7 +104,6 @@ vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.autoindent = true
 vim.o.textwidth = 79
-
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
@@ -289,6 +287,18 @@ require('lazy').setup({
         changedelete = { text = '~' },
       },
     },
+  },
+  {
+    'CopilotC-Nvim/CopilotChat.nvim',
+    branch = 'canary',
+    dependencies = {
+      { 'github/copilot.vim' },
+      { 'nvim-lua/plenary.nvim' },
+    },
+    opts = {
+      -- See configuration section for options
+    },
+    -- see commands section for default commands
   },
 
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
