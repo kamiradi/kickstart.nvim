@@ -297,6 +297,13 @@ require('lazy').setup({
     },
     opts = {
       -- See configuration section for options
+      mappings = {
+        -- Add custom keybindings
+        --  See `:help vim.keymap.set()` for more information
+        complete = {
+          insert = '<S-Tab>',
+        },
+      },
     },
     -- see commands section for default commands
   },
